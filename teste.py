@@ -11,9 +11,12 @@ cont=0
 #SQL
 #Criando a tabela conforme documentação usando o banco SQLite
 def create_table():
-    c.execute('CREATE TABLE IF NOT EXISTS tb_customer_account(id_customer INTEGER PRIMARY KEY, \
-              cpf_cnpj VARCHAR(11) NOT NULL, nm_customer VARCHAR(40) NOT NULL,\
-              is_active BOOLEAN NOT NULL, vl_total REAL NULL)')
+    c.execute('CREATE TABLE IF NOT EXISTS tb_customer_account \
+              (id_customer INTEGER PRIMARY KEY, \
+              cpf_cnpj VARCHAR(11) NOT NULL, \
+              m_customer VARCHAR(40) NOT NULL,\
+              is_active BOOLEAN NOT NULL, \
+              vl_total REAL NULL);')
 
 create_table()
 
