@@ -50,6 +50,7 @@ def read_tb_customer_account(wordUsed):
     for row in c.execute(sql, (wordUsed,)):
         print(row)
 
+
 #SQL
 c.execute("""SELECT vl_total FROM tb_customer_account WHERE
           id_customer >= 1500 and id_customer <= 2700 and vl_total >= 560.00;""")
@@ -68,6 +69,6 @@ print('A média de vl_total dos customers que tenham um saldo maior que R$560.00
 c.execute("""SELECT * FROM tb_customer_account WHERE
           id_customer >= 1500 and id_customer <= 2700 and vl_total >= 560.00 ORDER BY vl_total DESC;""")
 '''Exibindo os clientes que participaram do cáculo da média'''
-print('Os costumers que participaram da média são...')
+print('\n Os costumers que participaram da média são...')
 for linha in c.fetchall():
     print(linha)
