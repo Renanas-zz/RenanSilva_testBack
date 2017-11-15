@@ -50,16 +50,12 @@ def read_tb_customer_account(wordUsed):
     for row in c.execute(sql, (wordUsed,)):
         print(row)
 
-read_tb_customer_account('Leandro Mitter')
-
-
 #SQL
 c.execute("""SELECT vl_total FROM tb_customer_account WHERE
           id_customer >= 1500 and id_customer <= 2700 and vl_total >= 560.00;""")
 '''Coletando os valores que devem ser usados para o cálculo da média e colocando na variavel "soma"
    e somando o "cont"(contador) para a divisão da média.'''
 for linha in c.fetchall():
-    print(linha)
     desempacotador=linha[0]
     soma= soma+desempacotador
     cont= cont+1
@@ -72,5 +68,6 @@ print('A média de vl_total dos customers que tenham um saldo maior que R$560.00
 c.execute("""SELECT * FROM tb_customer_account WHERE
           id_customer >= 1500 and id_customer <= 2700 and vl_total >= 560.00 ORDER BY vl_total DESC;""")
 '''Exibindo os clientes que participaram do cáculo da média'''
+print('Os costumers que participaram da média são...')
 for linha in c.fetchall():
     print(linha)
